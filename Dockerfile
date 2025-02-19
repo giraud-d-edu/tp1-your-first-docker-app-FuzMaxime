@@ -1,30 +1,25 @@
-# Utilisation de l'image officielle Golang
-FROM golang:alpine
+FROM node:14
 
-# Définir le répertoire de travail dans le conteneur
-WORKDIR /app
+# Set the working directory
+WORKDIR /usr/src/app
 
-# Copier les fichiers go.mod et go.sum dans le conteneur
-COPY scripts/go.mod /app/scripts/
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-# Installer les dépendances
-WORKDIR /app/scripts
-RUN go mod tidy
+# Install dependencies
+RUN npm install
 
-# Copier le reste des fichiers du projet dans le conteneur
-COPY . /app
+# Copy the rest of the application files
+COPY . .
 
-# Construire l'application
-RUN go build -o /app/scripts/main.go
+# Rebuild native modules
+RUN npm rebuild sqlite3
 
-# Définir le répertoire de travail final
-WORKDIR /app
+# Expose the port the app runs on
+EXPOSE 3000
 
-# Exposer le port sur lequel l'application s'exécute
-EXPOSE 8080
+# Create a volume for the SQLite database
+VOLUME ["/usr/src/app/src/database"]
 
-# Donner les permissions d'exécution au fichier binaire
-RUN chmod +x /app/scripts/main.go
-
-# Commande pour exécuter l'application
-CMD ["/app/scripts/main.go"]
+# Command to run the application
+CMD ["node", "src/index.js"]
