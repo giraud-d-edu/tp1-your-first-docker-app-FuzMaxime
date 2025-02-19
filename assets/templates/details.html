@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Groupie Tracker</title>
+
+  <!----- CSS ----->
+  <link rel="stylesheet" href="../static/css/details.css">
+  <link rel="stylesheet" href="../static/css/overview.css">
+  <link rel="stylesheet" href="../static/css/navigation.css">
+
+  <!----- Google Fonts ----->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+  <!----- BOXICON ----->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  
+  <!----- FAVICON ----->
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../static/images/favicon/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <nav>
+    <header>
+        <div class="logo-text">
+            <a class="image" href="/">
+                <img src="../static/images/logo/mini-logo.png" alt="logo">
+            </a>
+            <div>
+                <span class="title">Tracker</span>
+                <span class="subtitle">Ynov Project</span>
+            </div>
+        </div>
+    </header>
+    <div class="sidebar">
+      <form class="search-box" action="/details"method = "post">
+        <li>
+          <i class="bx bx-search icon"></i>
+          <input class="search" type="text"  placeholder="Search" name="search"  />
+        </li>
+      </form>
+      <ul class="menu">
+        <li class="nav-element">
+          <i class="bx bx-home-alt icon"></i>
+          <a href="/">Home</a>
+        </li>
+        <li class="nav-element">
+          <i class="bx bx-info-circle icon"></i>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <img class="img" src={{ .ValueArtist.Image }} alt="album"/>
+    <div class="info">
+      <!---------------------------------------------------------------------->
+      <h1>{{ .ValueArtist.Name }}</h1>
+      <!---------------------------------------------------------------------->
+      <h2>History</h2>
+      <div class="text">
+        <p>
+          <a class ="wiki" href = {{.WikiLink}} target="_blank"> <span> {{ .ValueArtist.Name }} </span> </a>  create in {{ .ValueArtist.CreationDate }}. 
+          The first album was relise in {{ .ValueArtist.FirstAlbum }}.
+        </p>
+      </div>
+      <!---------------------------------------------------------------------->
+      <h2>Members</h2>
+      <div class="text">
+        {{ range $index, $element := .ValueArtist.Members }}
+        <a class="members" href="https://fr.wikipedia.org/wiki/{{ $element }}" target="_blank">
+          <span>{{ $element }}</span>
+        </a>
+        {{ end }}
+      </div>
+      <!---------------------------------------------------------------------->
+      <h2>Events</h2>
+      <div class="text">
+        {{ range $index, $element := .Relation }}
+          <a class="relation" href="https://www.google.com/maps/search/{{ $element }}" target="_blank">
+            <span>{{ $element }}</span>
+          </a>
+        {{ end }}
+      </div>
+      <div class="spotify">
+      <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/{{ .SpotifyMusic }}?utm_source=generator" width="100%" height="352"
+        frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+      </div>
+      <div class="logo">
+        <a href={{ .YoutubeSearch }} target="_blank"><img src= "../static/images/logo/youtube.png"width="48" height="48" alt="youtube"/></a>
+        <a href={{ .SpotifyLink }} target="_blank"><img src="../static/images/logo/spotify.png" width="48" height="48" alt="spotify"/></a>
+        <a href={{ .DeezerLink }} target="_blank"><img src="../static/images/logo/deezer.png" width="48" height="48" alt="deezer"/></a>
+      </div>
+      <!----------------------------------------------------------------------->
+      <div class="nav-bottom">
+        <a class="arrow" href="#"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

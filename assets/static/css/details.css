@@ -1,0 +1,145 @@
+main {
+    padding: 5% 15%;
+}
+
+
+
+/* ============================== CONTAINER ============================== */
+.img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    width: 300px;
+    border-radius: 200%;
+    box-shadow: 0px 0px 5px black;
+    border: 5px solid #695cfe;
+}
+.info {
+    position: relative;
+    left: 350px;
+    width: 400px;
+}
+/* ======================================================================= */
+
+
+
+/*============================== TEXTE ============================== */
+h1 {
+    font-size: 3.5em;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 35px;
+}
+h2 {
+    font-size: 1.75em;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: 3px solid #695cfe;
+    margin-bottom: 20px;
+}
+.text .wiki {
+    color: #ffffff;
+    font-weight: 400;
+}
+.text .wiki span:hover {
+    color: #695cfe;
+    border-bottom: #695cfe 2px solid;
+}
+.text .members {
+    color: #ffffff;
+    font-weight: 400;
+}
+.text .members span:hover {
+    color: #695cfe;
+    border-bottom: #695cfe 2px solid;
+}
+.text .relation:nth-child(2n+1) {
+    color: #ffffff;
+    font-weight: 400;
+}
+.text .relation:nth-child(2n+1) span:nth-child(2n+1):hover {
+    color: #695cfe;
+    border-bottom: #695cfe 2px solid;
+}
+.text .relation:nth-child(2n+0) {
+    color: #c3c2cc;
+    cursor: default;
+    pointer-events: none;        
+    text-decoration: none;
+    padding-bottom: 35px;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    color: #c3c2cc;
+    margin-bottom: 50px;
+}
+.logo {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+/* ===========================NAV Bottom============================== */
+
+.nav-bottom {
+    display: flex;
+    margin-top: 50px;
+}
+.arrow {
+    font-size: 1.25em;
+    padding: 20px;
+    border: 0;
+    color: #c3c2cc;
+    border-radius: 500px;
+    background-color: #2d353c;
+    display: flex;
+    align-items: center;
+}
+.arrow:hover {
+    color: #ffffff;
+    background-color: #695cfe;
+    cursor: pointer;
+}
+
+/* ==================================================================== */
+
+.scroll-to-top a {
+    position: relative;
+    top: -25px;
+}
+
+@media screen and (max-width: 1200px){
+    main {
+        padding: 50px;
+        align-items: center;
+    }
+    
+    /* ============================== CONTAINER ============================== */
+    .img {
+        position: static;
+        width: 200px;
+    }
+    .info {
+        position: static;
+        left: 0;
+        margin-top: 50px;
+        width: 300px;
+    }
+    
+    /* ===========================NAV Bottom============================== */
+
+    .nav-bottom {
+        display: flex;
+        margin-top: 50px;
+    }
+    .arrow {
+        width: 20px;
+    }
+}
+
+.spotify{
+    margin-bottom: 50px;
+}
+

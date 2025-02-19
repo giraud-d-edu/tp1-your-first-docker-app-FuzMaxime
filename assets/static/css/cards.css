@@ -1,0 +1,122 @@
+/* ========================= BODY ========================= */
+main {
+    align-items: center;
+    color: #c3c2cc;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+/* ======================================================== */
+
+
+
+
+
+/* ========================= CARDS ========================= */
+.grid-card {
+    display: grid;
+    align-items: center;
+    gap: 30px;
+}
+@media screen and (max-width: 768px) {
+    .grid-card {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media screen and (min-width: 768px){
+    .grid-card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 1400px){
+    .grid-card {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 1900px){
+    .grid-card {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media screen and (min-width: 2160px) {
+    .grid-card {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+@media screen and (min-width: 2800px) {
+    .grid-card {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+/* ======================================================== */
+
+
+
+
+
+/* ========================= CARD ========================= */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 260px;
+    border: 3px solid #2d353c;
+    background-color: #1d2126;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px black;
+}
+.card:hover {
+    border: 3px solid #695cfe;
+    position: relative;
+    bottom: 5px;
+}
+body.light .card {
+    border: 3px solid #454a4f;
+}
+body.light .card:hover {
+    border: 3px solid #695cfe;
+}
+body.light .card {
+    background-color: #fff;
+}
+/* ======================================================== */
+
+
+
+
+
+/*========================= IMAGE ========================= */
+.img-card img {
+    margin-top: 17.5px;
+    height: 220px;
+    width: 220px;
+    border-radius: 200px;
+    box-shadow: 0px 0px 5px black;
+}
+/* ========================================================= */
+
+
+
+
+
+/* ========================= TEXTES ========================= */
+.txt-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    font-size: 1.25em;
+}
+.txt-card h4 {
+    color: #ffffff;
+}
+body.light .txt-card h4 {
+    color: #2d353c;
+}
+.txt-card h5 {
+    color: #6e767e;
+    font-weight: 600;
+}
+/* ========================================================== */

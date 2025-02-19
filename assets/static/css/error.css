@@ -1,0 +1,43 @@
+main {
+    height: 100vh;
+    justify-content: center;
+}
+h1 {
+    color: #ffffff;
+    margin-left: 20%;
+}
+h2 {
+    font-size: 1em;
+    font-weight: 300;
+    color: #ffffff;
+    margin-left: 20%;
+    position: relative;
+    top: -35px;
+}
+h2 a {
+    color: #ffffff;
+    border-bottom: 3px solid #695cfe;
+}
+h2 a:hover {
+    color: #695cfe;
+    border-bottom: 0px;
+}
+
+
+
+/* =====================Error css =========== */
+
+.error {
+    color: #695cfe;
+    font-size: 5em;
+    font-weight: 900;
+}
+.anger {
+    color: #c3c2cc;
+    font-size: 3em;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    margin-right: 20%;
+}
